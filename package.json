@@ -1,0 +1,57 @@
+{
+  "name": "create-storefront",
+  "version": "0.0.8",
+  "keywords": [
+    "saleor",
+    "react",
+    "next",
+    "next.js",
+    "e-commerce"
+  ],
+  "description": "Create Saleor & Next.js-powered React shopping apps with one command",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saleor/create-next-shop"
+  },
+  "author": "Saleor Team <hello@saleor.io>",
+  "license": "MIT",
+  "bin": {
+    "create-storefront": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "ncc build ./index.ts -w -o dist/",
+    "prerelease": "rimraf ./dist/",
+    "release": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register -e templates",
+    "prepublish": "yarn release"
+  },
+  "devDependencies": {
+    "@types/async-retry": "1.4.3",
+    "@types/cross-spawn": "^6.0.2",
+    "@types/fs-extra": "^9.0.13",
+    "@types/node": "^16.11.7",
+    "@types/prompts": "2.0.14",
+    "@types/rimraf": "3.0.2",
+    "@types/tar": "6.1.0",
+    "@types/validate-npm-package-name": "3.0.3",
+    "@vercel/ncc": "0.31.1",
+    "async-retry": "1.3.3",
+    "chalk": "4.1.2",
+    "commander": "8.3.0",
+    "cpy": "8.1.2",
+    "cross-spawn": "7.0.3",
+    "fs-extra": "^10.0.0",
+    "got": "11.8.2",
+    "prompts": "2.4.2",
+    "rimraf": "3.0.2",
+    "tar": "6.1.11",
+    "typescript": "4.4.4",
+    "update-check": "1.5.4",
+    "validate-npm-package-name": "3.0.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}
